@@ -124,7 +124,7 @@ ac.addEventListener("click", function (){
 })
 
 backspace.addEventListener("click", function () {
-    calc = calc.slice(0, -1);
+    calc = calc.toString().slice(0, -1);
     display.textContent = calc;
 })
 
