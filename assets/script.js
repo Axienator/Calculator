@@ -4,14 +4,19 @@ const containermode = document.getElementById('mode')
 const contain = document.getElementById('contain')
 const moonsym = document.getElementById('moonsym')
 const colorbody = document.getElementById('contain')
+const body = document.body
+const allbuttons = document.querySelectorAll('button')
 //contents
+
+
 const equal = document.querySelector('#equal')
 const integer = document.querySelector('#integer')
 const AC = document.querySelector('#AC')
 const backspace = document.querySelector('#backspace')
-const percentage = document.querySelector('#percentage')
-const operators = ['+', '-','*','/']
+const percentage = document.getElementById('percentage')
 const digits = document.querySelectorAll('.primaryDisplay')
+const operators = ['+', '-','*','/','.','%']
+
 
 let calc = "";
 
@@ -34,7 +39,7 @@ equal.addEventListener('click', function (){
     calc = eval(calc)
     display.textContent = calc
   } catch {
-    display.textContent = "Syntax Error"
+    display.textContent = "Error"
     calc = ""
   }
 })
@@ -49,6 +54,24 @@ AC.addEventListener('click', function () {
     display.textContent = calc;
 })
 
+// Understand how this percentage works
+percentage.addEventListener('click', () => {
+  try {
+    // Get the last number in the expression
+    const match = calc.match(/(\d+\.?\d*)$/)
+    if (!match) return
+
+    const number = match[0]
+    const percent = parseFloat(number) / 100
+
+    // Replace the number with its percentage value
+    calc = calc.replace(/(\d+\.?\d*)$/, percent.toString())
+    display.textContent = calc
+  } catch {
+    display.textContent = "Error"
+    calc = ""
+  }
+})
 
 
 
@@ -76,7 +99,7 @@ containermode.addEventListener("click", function(){
     containermode.style.backgroundColor='antiquewhite'
     colorbody.style.backgroundColor='black'
     body.style.backgroundColor='antiquewhite'
-    display.style.backgroundColor='white'
+    display.style.backgroundColor='antiquewhite'
     display.style.color='black'
     
     allbuttons.forEach(button => {
