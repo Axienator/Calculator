@@ -1,38 +1,42 @@
-
-
+// Calculator container
 const display = document.getElementById('box')
 const containermode = document.getElementById('mode')
 const contain = document.getElementById('contain')
 const moonsym = document.getElementById('moonsym')
-var colorbody = document.getElementById('contain')
-const body = document.body
-
-
+const colorbody = document.getElementById('contain')
+//contents
 const equal = document.querySelector('#equal')
 const integer = document.querySelector('#integer')
 const AC = document.querySelector('#AC')
 const backspace = document.querySelector('#backspace')
-const primarybtns = document.querySelectorAll('.calcprimary')
 const percentage = document.querySelector('#percentage')
-
+const operators = ['+', '-','*','/']
+const digits = document.querySelectorAll('.primaryDisplay')
 
 let calc = "";
 
-primarybtns.forEach(btns => {
+digits.forEach(btns => {
     btns.addEventListener('click', () => {
-        btnsprimary(btns.textContent);
+        const value = btns.textContent
+        const lastChar = calc.slice(-1)
+        if (operators.includes(value) && operators.includes(lastChar)) return
+        btnsprimary(value)
     })
 }) 
 
-
 function btnsprimary (buttons) {
-    calc = calc + `${buttons}`;
-    display.textContent = calc;
+    calc = calc + `${buttons}`
+    display.textContent = calc
 }
 
 equal.addEventListener('click', function (){
+  try {
     calc = eval(calc)
     display.textContent = calc
+  } catch {
+    display.textContent = "Syntax Error"
+    calc = ""
+  }
 })
 
 backspace.addEventListener('click', function () {
@@ -50,8 +54,6 @@ AC.addEventListener('click', function () {
 
 
 
-
-  
 
 containermode.addEventListener("click", function(){
  moonsym.classList.toggle('nightmode')

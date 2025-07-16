@@ -24,9 +24,7 @@ body {
 
 
 .container {
-    padding: 40px;
-    width: 25em;
-    height: 40em;
+    padding: 30px;
     border-radius: 30px;
     background-color: black;
 }
