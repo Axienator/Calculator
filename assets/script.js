@@ -1,12 +1,3 @@
-// Calculator container
-const display = document.getElementById('box')
-const containermode = document.getElementById('mode')
-const contain = document.getElementById('contain')
-const moonsym = document.getElementById('moonsym')
-const colorbody = document.getElementById('contain')
-const body = document.body
-const allbuttons = document.querySelectorAll('button')
-//contents
 
 
 const equal = document.querySelector('#equal')
@@ -36,7 +27,7 @@ function btnsprimary (buttons) {
 
 equal.addEventListener('click', function (){
   try {
-    calc = eval(calc)
+    calc = parseFloat(eval(calc)).toString()
     display.textContent = calc
   } catch {
     display.textContent = "Error"
@@ -57,19 +48,11 @@ AC.addEventListener('click', function () {
 // Understand how this percentage works
 percentage.addEventListener('click', () => {
   try {
-    // Get the last number in the expression
-    const match = calc.match(/(\d+\.?\d*)$/)
-    if (!match) return
-
-    const number = match[0]
-    const percent = parseFloat(number) / 100
-
-    // Replace the number with its percentage value
-    calc = calc.replace(/(\d+\.?\d*)$/, percent.toString())
-    display.textContent = calc
+    calc = (parseFloat(calc) / 100).toString();
+    display.textContent = calc;
   } catch {
-    display.textContent = "Error"
-    calc = ""
+    display.textContent = "Error";
+    calc = "";
   }
 })
 
@@ -78,36 +61,5 @@ percentage.addEventListener('click', () => {
 
 
 
-containermode.addEventListener("click", function(){
- moonsym.classList.toggle('nightmode')
 
- if (moonsym.classList.contains('nightmode')) {
-  moonsym.textContent = "☾"
-  colorbody.style.backgroundColor='antiquewhite'
-  containermode.style.backgroundColor='black'
-  body.style.backgroundColor='black'
-  display.style.backgroundColor='black'
-  display.style.color='antiquewhite'
-
-  allbuttons.forEach(button => {
-    button.style.backgroundColor='black'
-    button.style.color='antiquewhite'
-  })
-
- } else {
-    moonsym.textContent = "☀"
-    containermode.style.backgroundColor='antiquewhite'
-    colorbody.style.backgroundColor='black'
-    body.style.backgroundColor='antiquewhite'
-    display.style.backgroundColor='antiquewhite'
-    display.style.color='black'
-    
-    allbuttons.forEach(button => {
-    button.style.backgroundColor='antiquewhite'
-    button.style.color='black'
-  })
-    
- }
-
-})
 
