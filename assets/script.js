@@ -1,5 +1,3 @@
-
-
 const equal = document.querySelector('#equal')
 const integer = document.querySelector('#integer')
 const AC = document.querySelector('#AC')
@@ -7,8 +5,8 @@ const backspace = document.querySelector('#backspace')
 const percentage = document.getElementById('percentage')
 const digits = document.querySelectorAll('.primaryDisplay')
 const operators = ['+', '-','*','/','.','%']
-
-
+const history = document.getElementById('historybox')
+const historycontainer = document.getElementById('historylogcontainer')
 let calc = "";
 
 digits.forEach(btns => {
@@ -45,7 +43,7 @@ AC.addEventListener('click', function () {
     display.textContent = calc;
 })
 
-// Understand how this percentage works
+
 percentage.addEventListener('click', () => {
   try {
     calc = (parseFloat(calc) / 100).toString();
@@ -57,9 +55,11 @@ percentage.addEventListener('click', () => {
 })
 
 
+// When the history is clicked -> creates a div class -> shows the user's calculations -> clear history button -> no history
 
+// Question : How do I make a div that shows the result of the user's calculations
+ 
 
-
-
-
-
+history.addEventListener('click', () => {
+  historycontainer.classList.toggle('show')
+})

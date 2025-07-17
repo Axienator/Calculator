@@ -6,8 +6,6 @@ const colorbody = document.getElementById('contain')
 const body = document.body
 const allbuttons = document.querySelectorAll('button')
 
-
-
 containermode.addEventListener("click", function(){
  moonsym.classList.toggle('nightmode')
 
@@ -18,6 +16,8 @@ containermode.addEventListener("click", function(){
   body.style.backgroundColor='black'
   display.style.backgroundColor='black'
   display.style.color='antiquewhite'
+  historycontainer.style.backgroundColor='rgb(136, 127, 116)'
+  history.style.backgroundColor='black'
 
   allbuttons.forEach(button => {
     button.style.backgroundColor='black'
@@ -31,7 +31,9 @@ containermode.addEventListener("click", function(){
     body.style.backgroundColor='antiquewhite'
     display.style.backgroundColor='antiquewhite'
     display.style.color='black'
-    
+    historycontainer.style.backgroundColor='gray'
+    history.style.backgroundColor='antiquewhite'
+
     allbuttons.forEach(button => {
     button.style.backgroundColor='antiquewhite'
     button.style.color='black'
