@@ -118,24 +118,37 @@ button:hover {
 
 
 .historycontainer {
-    padding: 30px;
-    width: 25rem;
-    height: 40rem;
-    border-radius: 30px;
-    background-color: rgb(72, 69, 66);
-    z-index: -1;
-    right: 40%;
-    opacity: 0;
-    visibility: hidden;
-    transition: right 0.3s ease;
-    
+  padding: 30px;
+  width: 25rem;
+  height: 40rem;
+  border-radius: 30px;
+  background-color: rgb(72, 69, 66);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10%); /* 10% is temporary so edit it as -25 */
+  transition:  opacity 0.3s ease;
 }
 
 .show {
-    visibility: visible;
-    right: 15%;
-    opacity: 1;
-
+  visibility: visible;
+  opacity: 1;
 }
 
+.expression {
+  font-size: 16px;
+  color: #ccc;
+}
 
+.historyresult {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+#clearbtn {
+    background-color: antiquewhite;
+    width: 20px;
+    font-size: 10px;
+    margin-bottom:10px;
+}
