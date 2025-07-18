@@ -4,7 +4,7 @@
 A responsive and interactive calculator built using HTML, CSS, and JavaScript. This app supports basic arithmetic operations, dark/light mode toggling, and a persistent calculation history using localStorage.
 
 
-----------------------------------------------------------------------------------------
+-----------------------
 ##  Features
 
 - Basic arithmetic: `+`, `-`, `*`, `/`, `%`
@@ -15,4 +15,4 @@ A responsive and interactive calculator built using HTML, CSS, and JavaScript. T
 - Persistent history using localStorage
 - Error handling for invalid expressions
 
-----------------------------------------------------------------------------------------
+-----------------------
