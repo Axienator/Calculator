@@ -125,15 +125,17 @@ button:hover {
   z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-20%);
-  transition:  opacity 0.3s ease;
+  transform: translateX(-40%);
+  transition:  all 0.3s ease;
   overflow: auto;
 }
-
 .show {
   visibility: visible;
   opacity: 1;
+  transform: translateX(-20%);
 }
+
+
 
 #historyentry {
     float: right;
@@ -171,8 +173,10 @@ button:hover {
 
 .confirm-model {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
   background: rgba(0,0,0,0.5);
   display: none;
   justify-content: center;
@@ -182,8 +186,10 @@ button:hover {
 
 .noContents {
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
     font-size: 25px;
     background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
     display: none;

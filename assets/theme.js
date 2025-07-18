@@ -37,6 +37,8 @@ containermode.addEventListener("click", function(){
     allbuttons.forEach(button => {
     button.style.backgroundColor='antiquewhite'
     button.style.color='black'
+
+    
   })
     
  }

@@ -68,6 +68,7 @@ percentage.addEventListener('click', () => {
     calc = "";
   }
 })
+
 equal.addEventListener('click', () => {
   try {
     const result = parseFloat(eval(calc)).toString() 
@@ -76,14 +77,11 @@ equal.addEventListener('click', () => {
     calc = result
     display.textContent = calc
     digitCalculated = true
-
     const entryDiv = document.createElement('li')
     entryDiv.textContent = entry
     historyentry.append(entryDiv)
 
     localStorage.setItem('calcHistory', JSON.stringify(historylist)) // convert historylist into string(calcHistory) to store it 
-
-
   } catch {
     display.textContent = "Error"
     calc = ""
