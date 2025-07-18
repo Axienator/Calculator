@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -48,12 +49,22 @@
     </div>
 
     <div class="historycontainer" id="historylogcontainer">
-       
+       <button class="clearbtn">Clear History</button> 
+       <ul id ="historyentry" ></ul>
     </div>
 
-    
+    <div class="confirm-model">
+        <div class="model-content">
+            <p>Do you want to clear the history?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
 
-
+    <div class="noContents" id="noContents">
+        <p>There are no contents to clear!</p>
+        <button id="Okay">Okay</button>
+    </div>
     <script src="assets/script.js"></script>
     <script src="assets/theme.js"></script>
 </body> 

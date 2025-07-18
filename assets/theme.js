@@ -31,7 +31,7 @@ containermode.addEventListener("click", function(){
     body.style.backgroundColor='antiquewhite'
     display.style.backgroundColor='antiquewhite'
     display.style.color='black'
-    historycontainer.style.backgroundColor='gray'
+    historycontainer.style.backgroundColor='rgb(44, 42, 39)'
     history.style.backgroundColor='antiquewhite'
 
     allbuttons.forEach(button => {

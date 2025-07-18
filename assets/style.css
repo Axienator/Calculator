@@ -4,7 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .containermode {
@@ -21,8 +22,6 @@ body {
 }
 
 
-
-
 .container {
     padding: 30px;
     width: 30rem;
@@ -30,7 +29,7 @@ body {
     border-radius: 30px;
     background-color: black;
     overflow: hidden;
-    
+    z-index: 20;
 }
 
 .calculator {
@@ -119,15 +118,16 @@ button:hover {
 
 .historycontainer {
   padding: 30px;
-  width: 25rem;
+  width: 27rem;
   height: 40rem;
   border-radius: 30px;
-  background-color: rgb(72, 69, 66);
-  z-index: -1;
+  background-color: rgb(44, 42, 39);
+  z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(10%); /* 10% is temporary so edit it as -25 */
+  transform: translateX(-20%);
   transition:  opacity 0.3s ease;
+  overflow: auto;
 }
 
 .show {
@@ -135,20 +135,156 @@ button:hover {
   opacity: 1;
 }
 
-.expression {
-  font-size: 16px;
-  color: #ccc;
-}
-
-.historyresult {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-}
-
-#clearbtn {
+#historyentry {
+    float: right;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 8em;
+    min-height: 50px;
+    flex-direction: column;
+    font-size: 40px;
+    padding: 15px;
     background-color: antiquewhite;
-    width: 20px;
-    font-size: 10px;
-    margin-bottom:10px;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.clearbtn {
+    float: right;
+    text-align: center;
+    background-color: rgb(255, 238, 222);
+    border-radius: 4px;
+    width: 10em;
+    height: 3em;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.clearbtn:hover{
+    background-color: rgb(199, 186, 170);
+}
+
+.clearbtn:active{
+    background-color: rgb(165, 155, 143);
+}
+
+.confirm-model {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.noContents {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.noContents p {
+  background: rgb(255, 215, 215); /* dialog box style */
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.noContents button {
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgb(255, 238, 222);
+    border-radius: 4px;
+    width: 10em;
+    height: 3em;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.model-content {
+  background: antiquewhite;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.model-content p {
+    font-size: 25px;
+}
+
+.model-content button {
+    background-color: black;
+    color: antiquewhite;
+    border-radius: 4px;
+    width: 8em;
+    height: 2em;
+    padding: 2x;
+    font-size: 20px;
+    cursor: pointer;
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    #keys {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 15px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .result {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    #historyentry {
+        font-size: 20px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .historycontainer {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        transform: translateX(0);
+    }
+
+    .clearbtn {
+        width: 100%;
+        height: 2.5em;
+        font-size: 14px;
+    }
+
+    .containermode {
+        font-size: 20px;
+        width: 60px;
+        height: 25px;
+    }
+
+    .history {
+        font-size: 16px;
+        width: auto;
+    }
+    }
 }
