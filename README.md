@@ -16,3 +16,9 @@ A responsive and interactive calculator built using HTML, CSS, and JavaScript. T
 - Error handling for invalid expressions
 
 -----------------------
+Built with 
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- `localStorage` API
