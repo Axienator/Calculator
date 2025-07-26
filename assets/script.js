@@ -14,8 +14,8 @@ const historyentry = document.querySelector('#historyentry')
 const clearButton = document.querySelector('.clearbtn')
 const historylist = storedHistory ? JSON.parse(storedHistory) : [];
 const confirm = document.querySelector('.confirm-model')
-const yesbtn = document.getElementById('yes')
-const nobtn = document.getElementById('no')
+const yesbtn = document.querySelector('.yes')
+const nobtn = document.querySelector('.no')
 const okaybtn = document.getElementById('Okay')
 const noContents = document.querySelector('.noContents')
 
