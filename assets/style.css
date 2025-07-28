@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(201, 187, 169);
+    background-color: rgb(179, 179, 179);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,10 +26,11 @@ body {
     padding: 30px;
     width: 30rem;
     height: 40rem;
-    border-radius: 30px;
+    border-radius: 15px;
     background-color: black;
     overflow: hidden;
     z-index: 20;
+    border: 3px solid rgb(238, 216, 187);
 }
 
 .calculator {
@@ -52,7 +53,7 @@ body {
 #keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: clamp(4px, 2vw, 12px);
     padding: 30px;
 }
 
@@ -142,13 +143,13 @@ button:hover {
     display: flex;
     justify-content: end;
     align-items: end;
-    width: 8em;
+    width: 9em;
     min-height: 50px;
     flex-direction: column;
     font-size: 40px;
     padding: 15px;
-    background-color: antiquewhite;
-    border-radius: 20px;
+    background-color: rgb(172, 154, 137);
+    border-radius: 10px;
     gap: 20px;
 }
 
@@ -168,7 +169,7 @@ button:hover {
 }
 
 .clearbtn:active{
-    background-color: rgb(165, 155, 143);
+    background-color: rgb(207, 196, 182);
 }
 
 .confirm-model {
@@ -191,7 +192,7 @@ button:hover {
     width: 100vw; 
     height: 100vh;
     font-size: 25px;
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    background: rgba(0, 0, 0, 0.5); 
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -241,15 +242,107 @@ button:hover {
     cursor: pointer;
 }
 
-@media(max-width: 600px) {
+@media (max-width: 768px) {
   body {
-    padding: 2rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: rgb(192, 179, 166);
   }
 
   .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    padding: 15px;
+    width: 15rem;   /* Half of 30rem */
+    height: 23rem;  /* Half of 40rem */
+    border-radius: 15px;
+    flex-direction: column-reverse;
+    margin-bottom: 1rem;
+  }
+
+  .containermode {
+    font-size: 15px;
+    width: 40px;
+    height: 15px;
+    padding: 5px;
+  }
+
+  .nightmode {
+    background-color: black;
+    color:antiquewhite;
+    transform: translateX(25px);
+    transition: 0.3s ease-out;
+}
+
+  .result {
+    font-size: 20px; /* Half of 40px */
+    padding: 10px;
+    height: 15px;
+    text-align: center;
+  }
+
+  #keys {
+    gap: clamp(2px, 1vw, 6px); /* Half the spacing */
+    padding: 15px;
+  }
+
+  button {
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .history {
+    font-size: 15px;
+    width: 40px;
+    height: 15px;
+    padding: 5px;
+    
+  }
+
+  #historyentry {
+    font-size: 20px;
+    width: 12em;
+    padding: 2px;
+    gap: 10px;
+    margin-top: 2rem;
+    border-radius: 5px;
+  }
+
+  .clearbtn,
+  .noContents button {
+    font-size: 10px;
+    width: 7em;
+    height: 3.5em;
+    padding: 5px;
+  }
+
+  .historycontainer {
+    padding: 15px;
+    width: 15rem;
+    height: 23rem;
+    border-radius: 15px;
+    transform: translateX(0) translateY(-100%);
+
+  }
+
+  .show {
+    transform: translateX(0) translateY(-5%);
+  }
+
+  .model-content p {
+    font-size: 15px;
+  }
+
+  .model-content button {
+    font-size: 15px;
+    width: 4em;
+    height: 1em;
   }
 }
+
+
 
